@@ -6,6 +6,6 @@ description: A Helm chart wrapper for cluster intialization
 
 dependencies:
   - name: argo-cd
-    version: "5.43.4"
+    version: "7.2.0"
     repository: "https://argoproj.github.io/argo-helm"
     condition: argo-cd.enabled
