@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-hello
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "n2app.pea.co.th"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/hello-argocd"
+        backend:
+          service:
+            name: hello-service
+            port:
+              number: 80
