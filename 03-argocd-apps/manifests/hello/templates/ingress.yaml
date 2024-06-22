@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress-hello
+  name: ingress-hello-argocd
 spec:
   ingressClassName: nginx
   rules:
@@ -12,6 +12,6 @@ spec:
         path: "/hello-argocd"
         backend:
           service:
-            name: hello-service
+            name: hello-argocd-service
             port:
               number: 80

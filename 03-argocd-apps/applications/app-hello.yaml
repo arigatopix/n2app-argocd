@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: hello
+  name: hello-argocd
 spec:
   generators:
     - clusters:
@@ -19,7 +19,7 @@ spec:
         path: "03-argocd-apps/manifests/hello"
       destination:
         name: in-cluster
-        namespace: hello
+        namespace: hello-argocd
       syncPolicy:
         automated:
           selfHeal: false

@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deployment
+  name: hello-argocd-deployment
   labels:
-    app: hello
+    app: hello-argocd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello
+      app: hello-argocd
   template:
     metadata:
       labels:
-        app: hello
+        app: hello-argocd
     spec:
       containers:
-      - name: hello
+      - name: hello-argocd
         image: crccheck/hello-world:latest
         ports:
         - containerPort: 8000
