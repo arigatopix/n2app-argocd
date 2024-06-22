@@ -2,16 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-hello-argocd
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-  - host: "n2app.pea.co.th"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/hello-argocd"
-        backend:
-          service:
-            name: hello-argocd-service
-            port:
-              number: 80
+    - host: "n2app.pea.co.th"
+      http:
+        paths:
+          - pathType: Prefix
+            path: /hello-argocd(/|$)(.*)
+            backend:
+              service:
+                name: hello-argocd-service
+                port:
+                  number: 80
