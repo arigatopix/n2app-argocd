@@ -16,7 +16,7 @@ spec:
       source:
         repoURL: https://github.com/arigatopix/n2app-argocd.git
         targetRevision: "{{name}}" #Based on environment
-        path: "03-argocd-apps/manifests/n2app-frontend"
+        path: "manifests/n2app-frontend"
       destination:
         name: in-cluster
         namespace: n2app-frontend

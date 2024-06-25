@@ -16,7 +16,7 @@
 #       source:
 #         repoURL: https://github.com/arigatopix/n2app-argocd.git
 #         targetRevision: "{{name}}" #Based on environment
-#         path: "03-argocd-apps/manifests/argocd"
+#         path: "manifests/argocd"
 #         helm:
 #           ignoreMissingValueFiles: true
 #           valueFiles:

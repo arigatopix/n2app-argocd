@@ -16,7 +16,7 @@ spec:
       source:
         repoURL: https://github.com/arigatopix/n2app-argocd.git
         targetRevision: "{{name}}" #Based on environment
-        path: "03-argocd-apps/manifests/hello"
+        path: "manifests/hello"
       destination:
         name: in-cluster
         namespace: hello-argocd
