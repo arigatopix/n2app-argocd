@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-longhorn-deployment
+  namespace: n2app-longhorn
+  labels:
+    app: hello-longhorn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-longhorn
+  template:
+    metadata:
+      labels:
+        app: hello-longhorn
+    spec:
+      containers:
+        - name: hello-longhorn
+          image: crccheck/hello-world:latest
+          ports:
+            - containerPort: 8000

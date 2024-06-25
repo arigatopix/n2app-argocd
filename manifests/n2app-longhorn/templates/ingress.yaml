@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-hello-longhorn
+  namespace: n2app-longhorn
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: n2app-longhorn.pea.co.th
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: hello-longhorn-service
+                port:
+                  number: 80
