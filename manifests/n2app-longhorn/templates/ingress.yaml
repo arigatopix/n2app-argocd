@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: spo.pea.co.th
+    - host: spo-api.pea.co.th
       http:
         paths:
           - pathType: Prefix
