@@ -1,5 +1,5 @@
 resources:
-  - ../../resource
+  - ../../base
 images:
   - name: arigatopix/n2app-frontend:latest
     newTag: latest
