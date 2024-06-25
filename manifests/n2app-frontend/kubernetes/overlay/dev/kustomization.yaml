@@ -2,7 +2,7 @@ resources:
   - ../../base
 images:
   - name: arigatopix/n2app-frontend
-    newTag: v1.0.0-25
+    newTag: v1.0.0-26
 commonLabels:
   app: n2app
 patches:
