@@ -1,11 +1,11 @@
-bases:
-  - ../../base
+resources:
+  - ../../resource
 images:
   - name: arigatopix/n2app-frontend:latest
     newTag: latest
 commonLabels:
   app: n2app
-patchesStrategicMerge:
+patches:
   - patch.yaml
   - ingress-patch.yaml
 patches:
