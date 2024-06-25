@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+  name: n2app
+  namespace: n2app-backend
+spec:
+  tls:
+    - hosts:
+        - "n2app-api.pea.co.th"

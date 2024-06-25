@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: n2app
+spec:
+  selector:
+    matchLabels:
+      app: n2app
+  template:
+    metadata:
+      labels:
+        app: n2app
+    spec:
+      containers:
+        - name: primary
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 512Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi

@@ -1,0 +1,18 @@
+resources:
+  - ../../base
+images:
+  - name: arigatopix/n2app-backend
+    newTag: v1.0.0
+commonLabels:
+  app: n2app
+patches:
+  - patch.yaml
+  - ingress-patch.yaml
+patches:
+  - target:
+      kind: Ingress
+      name: n2app
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: n2app-api.pea.co.th
