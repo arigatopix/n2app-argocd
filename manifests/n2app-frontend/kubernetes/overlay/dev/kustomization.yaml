@@ -1,0 +1,18 @@
+bases:
+  - ../../base
+images:
+  - name: arigatopix/n2app-frontend:latest
+    newTag: latest
+commonLabels:
+  app: n2app
+patchesStrategicMerge:
+  - patch.yaml
+  - ingress-patch.yaml
+patches:
+  - target:
+      kind: Ingress
+      name: n2app
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: n2app.pea.co.th
