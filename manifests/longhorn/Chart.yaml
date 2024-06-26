@@ -1,11 +1,8 @@
 apiVersion: v2
-name: helm-longhorn
+name: longhorn-chart
 version: 1.0.0
-appVersion: 1.23.0
-description: A Helm chart wrapper for Longhorn
-
+description: Main Helm chart for deploying Longhorn and its dependencies
 dependencies:
   - name: longhorn
     version: 1.6.2
-    repository: "https://charts.longhorn.io"
-    condition: longhorn.enabled
+    repository: https://charts.longhorn.io

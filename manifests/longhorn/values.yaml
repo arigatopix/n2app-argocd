@@ -5,5 +5,5 @@ longhorn:
     defaultReplicaCount: "1"
 
   persistence:
-    defaultClassReplicaCount: 1
+    defaultClassReplicaCount: 2
     defaultClass: true
