@@ -22,4 +22,4 @@ spec:
               service:
                 name: monitoring-grafana
                 port:
-                  number: 3000 # Changed from 80 to 3000, which is Grafana's default HTTPS port
+                  number: 80 # Changed from 80 to 3000, which is Grafana's default HTTPS port
