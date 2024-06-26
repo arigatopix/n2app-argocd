@@ -3,13 +3,15 @@ kind: Ingress
 metadata:
   name: grafana-k8s-ing
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - n2app-matric.pea.co.th
-      secretName: grafana-k8s-cert
+      secretName: grafana-k8s-secret # Changed from grafana-k8s-secret to match your previous configurations
   rules:
     - host: n2app-matric.pea.co.th
       http:
@@ -20,4 +22,4 @@ spec:
               service:
                 name: monitoring-grafana
                 port:
-                  number: 80
+                  number: 3000 # Changed from 80 to 3000, which is Grafana's default HTTPS port

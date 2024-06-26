@@ -1,3 +1,9 @@
+domain: n2app-matric.pea.co.th
+domain1: alm.pea.co.th
+domain2: prom.pea.co.th
+
+environment: production
+
 kube-prometheus-stack:
   enabled: true
   fullnameOverride: prometheus
@@ -11,10 +17,21 @@ kube-prometheus-stack:
       existingSecret: "grafana-credentials"
       userKey: GRAFANA_USER
       passwordKey: GRAFANA_PASSWORD
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - n2app-matric.pea.co.th
+      tls:
+        - secretName: grafana-tls-secret
+          hosts:
+            - n2app-matric.pea.co.th
+    grafana.ini:
+      server:
+        root_url: https://n2app-matric.pea.co.th
+        domain: n2app-matric.pea.co.th
 
   alertmanager:
-    # To allow AlertManger to be used globally (for all namespace)
-    # https://github.com/sighupio/fury-kubernetes-monitoring/issues/132#issuecomment-1471854800
     alertmanagerSpec:
       alertmanagerConfigMatcherStrategy:
         type: None
