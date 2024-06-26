@@ -12,7 +12,7 @@ loki-stack:
   loki:
     fullnameOverride: loki-log
     persistence:
-      enabled: false
+      enabled: true
     config:
     alerting_groups: []
 
