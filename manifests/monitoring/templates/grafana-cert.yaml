@@ -5,7 +5,7 @@ metadata:
 spec:
   secretName: grafana-k8s-cert
   dnsNames:
-    - {{ .Values.domain }}
+    - n2app-matric.pea.co.th
   issuerRef:
     name: lets-encrypt-issuer-prod
     kind: ClusterIssuer
