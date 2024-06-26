@@ -13,8 +13,6 @@ loki-stack:
     fullnameOverride: loki-log
     persistence:
       enabled: true
-    config:
-    alerting_groups: []
 
   grafana:
     enabled: true
