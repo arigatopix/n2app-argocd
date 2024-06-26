@@ -1,0 +1,15 @@
+domain: n2app-matric.pea.co.th
+domain1: alm.pea.co.th
+domain2: prom.pea.co.th
+
+environment: production
+
+kube-prometheus-stack:
+  grafana:
+    grafana.ini:
+      server:
+        root_url: n2app-matric.pea.co.th
+    grafana.ini:
+      server:
+        root_url: https://n2app-matric.pea.co.th
+        domain: n2app-matric.pea.co.th
