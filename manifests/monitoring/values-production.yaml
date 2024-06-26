@@ -6,10 +6,24 @@ environment: production
 
 kube-prometheus-stack:
   grafana:
-    grafana.ini:
-      server:
-        root_url: n2app-matric.pea.co.th
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hosts:
+        - n2app-matric.pea.co.th
+      tls:
+        - secretName: grafana-k8s-cert
+          hosts:
+            - n2app-matric.pea.co.th
     grafana.ini:
       server:
         root_url: https://n2app-matric.pea.co.th
         domain: n2app-matric.pea.co.th
+
+  # Add cert-manager configuration if you're using it
+  certManager:
+    enabled: true
+    certificate:
+      create: true
+      dnsNames:
+        - n2app-matric.pea.co.th
