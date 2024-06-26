@@ -12,18 +12,10 @@ kube-prometheus-stack:
       hosts:
         - n2app-matric.pea.co.th
       tls:
-        - secretName: grafana-k8s-cert
+        - secretName: grafana-tls-secret
           hosts:
             - n2app-matric.pea.co.th
     grafana.ini:
       server:
         root_url: https://n2app-matric.pea.co.th
         domain: n2app-matric.pea.co.th
-
-  # Add cert-manager configuration if you're using it
-  certManager:
-    enabled: true
-    certificate:
-      create: true
-      dnsNames:
-        - n2app-matric.pea.co.th
