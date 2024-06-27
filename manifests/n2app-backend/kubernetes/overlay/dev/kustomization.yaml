@@ -6,9 +6,20 @@ images:
 commonLabels:
   app: n2app
 patches:
-  - patch.yaml
-  - ingress-patch.yaml
-patches:
+  - path: patch.yaml
+    target:
+      kind: Deployment
+      name: n2app
+  - path: ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: n2app
+      namespace: n2app-backend
+  - path: secret-patch.yaml
+    target:
+      kind: ExternalSecret
+      name: n2app
+      namespace: n2app-backend
   - target:
       kind: Ingress
       name: n2app
