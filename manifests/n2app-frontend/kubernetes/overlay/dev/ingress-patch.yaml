@@ -1,10 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
   name: n2app
   namespace: n2app-frontend
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
 spec:
   tls:
     - hosts:
-        - "n2app.pea.co.th"
+        - n2app.pea.co.th
+      secretName: tls-secret
+  rules:
+    - host: n2app.pea.co.th
+      http:
+        paths:
+          - backend:
+              service:
+                name: n2app
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
