@@ -15,11 +15,11 @@ patches:
       kind: Ingress
       name: n2app
       namespace: n2app-backend
-  - path: secret-patch.yaml
-    target:
-      kind: ExternalSecret
-      name: n2app
-      namespace: n2app-backend
+  # - path: secret-patch.yaml
+  #   target:
+  #     kind: ExternalSecret
+  #     name: n2app
+  #     namespace: n2app-backend
   - target:
       kind: Ingress
       name: n2app
