@@ -1,6 +1,7 @@
 resources:
   - manifest.yaml
   - ingress.yaml
+  - secret.yaml
 # replacements:
 #   - name: ING_NAME
 #     objref:
