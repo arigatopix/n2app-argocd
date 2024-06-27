@@ -1,17 +1,23 @@
 resources:
   - ../../base
+
 images:
   - name: arigatopix/n2app-frontend
     newTag: v1.0.0-26
+
 commonLabels:
   app: n2app
-patches:
+
+patchesStrategicMerge:
   - patch.yaml
   - ingress-patch.yaml
-patches:
+
+patchesJson6902:
   - target:
+      version: v1
       kind: Ingress
       name: n2app
+      namespace: n2app-frontend
     patch: |-
       - op: replace
         path: /spec/rules/0/host
