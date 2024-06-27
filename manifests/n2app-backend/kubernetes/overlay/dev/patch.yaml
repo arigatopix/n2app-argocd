@@ -22,4 +22,4 @@ spec:
               memory: 1024Mi
           envFrom:
             - secretRef:
-                name: n2app-backend-credentials
+                name: n2app-backend-secret
