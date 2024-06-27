@@ -17,15 +17,15 @@ kube-prometheus-stack:
       existingSecret: "grafana-credentials"
       userKey: GRAFANA_USER
       passwordKey: GRAFANA_PASSWORD
-    ingress:
-      enabled: true
-      ingressClassName: nginx
-      hosts:
-        - n2app-matric.pea.co.th
-      tls:
-        - secretName: grafana-tls-secret
-          hosts:
-            - n2app-matric.pea.co.th
+    # ingress:
+    #   enabled: true
+    #   ingressClassName: nginx
+    #   hosts:
+    #     - n2app-matric.pea.co.th
+    #   tls:
+    #     - secretName: grafana-tls-secret
+    #       hosts:
+    #         - n2app-matric.pea.co.th
     grafana.ini:
       server:
         root_url: https://n2app-matric.pea.co.th
