@@ -3,7 +3,7 @@ resources:
 
 images:
   - name: arigatopix/n2app-frontend
-    newTag: v1.0.0-26
+    newTag: v1.0.0-28
 
 commonLabels:
   app: n2app
