@@ -1,0 +1,30 @@
+resources:
+  - ../../base
+images:
+  - name: arigatopix/spo-backend
+    newTag: v1.0.0-8
+commonLabels:
+  app: spo-backend
+nameSuffix: -prod
+patches:
+  - path: patch.yaml
+    target:
+      kind: Deployment
+      name: spo-backend
+  - path: ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: spo-backend-ing
+      namespace: spo
+  # - path: secret-patch.yaml
+  #   target:
+  #     kind: ExternalSecret
+  #     name: n2app
+  #     namespace: n2app-backend
+  # - target:
+  #     kind: Ingress
+  #     name: spo-backend-ing
+  #   patch: |-
+  #     - op: replace
+  #       path: /spec/rules/0/host
+  #       value: api-spo.pea.co.th

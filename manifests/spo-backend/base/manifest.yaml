@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spo-backend
+  namespace: spo
+  labels:
+    app: spo-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spo-backend
+  template:
+    metadata:
+      labels:
+        app: spo-backend
+    spec:
+      containers:
+        - name: primary
+          image: arigatopix/spo-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - name: api-port
+              containerPort: 80
+              protocol: TCP
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              memory: 100Mi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: spo-backend-service
+  namespace: spo
+spec:
+  selector:
+    app: spo-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: ClusterIP

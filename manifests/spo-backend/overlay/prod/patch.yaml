@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spo-backend
+spec:
+  selector:
+    matchLabels:
+      app: spo-backend
+  template:
+    metadata:
+      labels:
+        app: spo-backend
+    spec:
+      containers:
+        - name: primary
+          resources:
+            requests:
+              cpu: 0.5
+              memory: 512Mi
+            limits:
+              cpu: 1
+              memory: 1024Mi
+          envFrom:
+            - secretRef:
+                name: spo-backend-secret
