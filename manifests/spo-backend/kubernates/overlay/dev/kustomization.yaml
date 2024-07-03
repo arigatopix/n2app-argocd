@@ -1,0 +1,19 @@
+resources:
+  - ../../base
+images:
+  - name: arigatopix/spo-backend
+    newTag: release-v1.0.0-48
+commonLabels:
+  app: spo-backend
+namespace: spo-backend
+nameSuffix: -dev
+patches:
+  - path: patch.yaml
+    target:
+      kind: Deployment
+      name: spo-backend
+  - path: ingress-patch.yaml
+    target:
+      kind: Ingress
+      name: spo-backend-ing
+      namespace: spo

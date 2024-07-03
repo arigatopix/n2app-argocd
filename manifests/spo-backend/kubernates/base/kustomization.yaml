@@ -1,12 +1,3 @@
 resources:
   - manifest.yaml
   - ingress.yaml
-  # - secret.yaml
-# replacements:
-#   - name: ING_NAME
-#     objref:
-#       apiVersion: networking.k8s.io/v1
-#       kind: Ingress
-#       name: n2app
-#     fieldref:
-#       fieldpath: metadata.name
