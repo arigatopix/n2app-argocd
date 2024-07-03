@@ -22,4 +22,4 @@ spec:
               memory: 1024Mi
           envFrom:
             - secretRef:
-                name: spo-backend-secret
+                name: spo-backend-prod-secret
