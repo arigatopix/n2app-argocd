@@ -4,6 +4,8 @@ metadata:
   annotations:
   name: spo-backend-ing
 spec:
+  rules:
+    - host: api-spo-dev.pea.co.th
   tls:
     - hosts:
         - "api-spo-dev.pea.co.th"
