@@ -2,7 +2,7 @@ resources:
   - ../../base
 images:
   - name: arigatopix/spo-backend
-    newTag: release-v1.0.0-50
+    newTag: release-v1.0.1-53
 commonLabels:
   app: spo-backend
 namespace: spo-backend
