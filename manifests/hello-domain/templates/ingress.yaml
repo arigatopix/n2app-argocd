@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "spo-dev.pea.co.th"
+    - host: "n2solar.pea.co.th"
       http:
         paths:
           - pathType: Prefix
