@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-domain-deployment
+  labels:
+    app: hello-domain
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-domain
+  template:
+    metadata:
+      labels:
+        app: hello-domain
+    spec:
+      containers:
+        - name: hello-domain
+          image: crccheck/hello-world:latest
+          ports:
+            - containerPort: 8000
