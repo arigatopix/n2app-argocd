@@ -8,11 +8,11 @@ metadata:
 spec:
   tls:
     - hosts:
-        - n2solar.pea.co.th
+        - api-spo-dev.pea.co.th
       secretName: tls-secret
   ingressClassName: nginx
   rules:
-    - host: n2solar.pea.co.th
+    - host: api-spo-dev.pea.co.th
       http:
         paths:
           - pathType: Prefix
