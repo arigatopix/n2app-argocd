@@ -3,12 +3,14 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
   name: spo-backend-ing
   namespace: spo
 spec:
   ingressClassName: nginx
   rules:
-    - host: spo-api.pea.co.th
+    - host: api-spo.pea.co.th
       http:
         paths:
           - backend:
