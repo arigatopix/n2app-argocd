@@ -5,7 +5,15 @@ metadata:
 spec:
   rules:
     - host: api-spo-dev.pea.co.th
-      $patch: replace
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: spo-backend-service
+                port:
+                  number: 80
   tls:
     - hosts:
         - api-spo-dev.pea.co.th
