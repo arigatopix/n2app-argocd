@@ -5,6 +5,7 @@ metadata:
 spec:
   rules:
     - host: api-spo-dev.pea.co.th
+      $patch: replace
   tls:
     - hosts:
         - api-spo-dev.pea.co.th
