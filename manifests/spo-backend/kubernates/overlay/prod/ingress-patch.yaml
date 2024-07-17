@@ -5,6 +5,8 @@ metadata:
   name: spo-backend-ing
   namespace: spo
 spec:
+  rules:
+    - host: api-spo.pea.co.th
   tls:
     - hosts:
-        - "spo-api.pea.co.th"
+        - api-spo.pea.co.th

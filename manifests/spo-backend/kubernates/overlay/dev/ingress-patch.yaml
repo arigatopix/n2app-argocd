@@ -8,4 +8,4 @@ spec:
     - host: api-spo-dev.pea.co.th
   tls:
     - hosts:
-        - "api-spo-dev.pea.co.th"
+        - api-spo-dev.pea.co.th
